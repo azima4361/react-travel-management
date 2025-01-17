@@ -40,3 +40,17 @@
              .card_bottom h5 span { font-weight: 500; 
                 color: var(--text-color); font-size: 0.8rem;
              }
+            .booking_btn {
+                 background: var(--secondary-color) !important;
+                 cursor: pointer;
+                 padding: 0.2rem 0.5rem;
+             }
+            .booking_btn a {
+                text-decoration: none;
+                font-size: 0.9rem;
+                color:#fff;
+            }
+            
+            .booking_btn a:hover {
+            color: #fff;
+            }
