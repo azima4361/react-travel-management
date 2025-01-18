@@ -17,7 +17,7 @@ const nav_links= [
   display: 'Tours'
 },
 ]
-const Header = () => {
+const Header = ({user}) => {
   const headerRef = useRef(null)
    const stickyHeaderFunc = ()=>{  window.addEventListener('scroll', () =>{  if(document.body.scrollTop >80 || document.documentElement.scrollTop>80){
      headerRef.current.classList.add('sticky_header') }
@@ -50,11 +50,22 @@ const Header = () => {
             </ul>
           </div>
 
-          <div className='nav_right d-flex align-items-center gap-4'>
-            <div className='nav_btns d-flex align-items-center gap-4'>
-              <Button className='btn secondary_btn'><Link to='/login'>Login</Link></Button>
-              <Button className='btn primary_btn '><Link to='/register'>Register</Link></Button>
-            </div>
+         {/* Right Section */}
+         <div className="nav_right d-flex align-items-center gap-4">
+              <div className="nav_btns d-flex align-items-center gap-4">
+                {user ? (
+                  <span className="welcome_text text-black">Welcome, {user.username}!</span>
+                ) : (
+                  <>
+                    <Button className="btn text-black bg-white">
+                      <Link to="/login">Login</Link>
+                    </Button>
+                    <Button className="btn text-black bg-white">
+                      <Link to="/register">Register</Link>
+                    </Button>
+                  </>
+                )}
+              </div>
             
             <span className='mobile_menu'>
             <i class="ri-menu-line"></i>
